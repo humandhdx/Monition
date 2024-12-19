@@ -1,0 +1,77 @@
+[
+{
+  "directory": "/home/wmd/project/EyeInhandMotionSW/src/utapi/build",
+  "command": "/usr/bin/g++  -I/home/wmd/project/EyeInhandMotionSW/src/utapi/. -I/home/wmd/project/EyeInhandMotionSW/src/utapi -g -fPIC -o CMakeFiles/utapi.dir/common/network.cpp.o -c /home/wmd/project/EyeInhandMotionSW/src/utapi/common/network.cpp",
+  "file": "/home/wmd/project/EyeInhandMotionSW/src/utapi/common/network.cpp"
+},
+{
+  "directory": "/home/wmd/project/EyeInhandMotionSW/src/utapi/build",
+  "command": "/usr/bin/g++  -I/home/wmd/project/EyeInhandMotionSW/src/utapi/. -I/home/wmd/project/EyeInhandMotionSW/src/utapi -g -fPIC -o CMakeFiles/utapi.dir/common/preempt_rt.cpp.o -c /home/wmd/project/EyeInhandMotionSW/src/utapi/common/preempt_rt.cpp",
+  "file": "/home/wmd/project/EyeInhandMotionSW/src/utapi/common/preempt_rt.cpp"
+},
+{
+  "directory": "/home/wmd/project/EyeInhandMotionSW/src/utapi/build",
+  "command": "/usr/bin/g++  -I/home/wmd/project/EyeInhandMotionSW/src/utapi/. -I/home/wmd/project/EyeInhandMotionSW/src/utapi -g -fPIC -o CMakeFiles/utapi.dir/common/socket_serial.cpp.o -c /home/wmd/project/EyeInhandMotionSW/src/utapi/common/socket_serial.cpp",
+  "file": "/home/wmd/project/EyeInhandMotionSW/src/utapi/common/socket_serial.cpp"
+},
+{
+  "directory": "/home/wmd/project/EyeInhandMotionSW/src/utapi/build",
+  "command": "/usr/bin/g++  -I/home/wmd/project/EyeInhandMotionSW/src/utapi/. -I/home/wmd/project/EyeInhandMotionSW/src/utapi -g -fPIC -o CMakeFiles/utapi.dir/common/socket_tcp.cpp.o -c /home/wmd/project/EyeInhandMotionSW/src/utapi/common/socket_tcp.cpp",
+  "file": "/home/wmd/project/EyeInhandMotionSW/src/utapi/common/socket_tcp.cpp"
+},
+{
+  "directory": "/home/wmd/project/EyeInhandMotionSW/src/utapi/build",
+  "command": "/usr/bin/g++  -I/home/wmd/project/EyeInhandMotionSW/src/utapi/. -I/home/wmd/project/EyeInhandMotionSW/src/utapi -g -fPIC -o CMakeFiles/utapi.dir/common/socket_udp.cpp.o -c /home/wmd/project/EyeInhandMotionSW/src/utapi/common/socket_udp.cpp",
+  "file": "/home/wmd/project/EyeInhandMotionSW/src/utapi/common/socket_udp.cpp"
+},
+{
+  "directory": "/home/wmd/project/EyeInhandMotionSW/src/utapi/build",
+  "command": "/usr/bin/g++  -I/home/wmd/project/EyeInhandMotionSW/src/utapi/. -I/home/wmd/project/EyeInhandMotionSW/src/utapi -g -fPIC -o CMakeFiles/utapi.dir/base/servo_api_base.cpp.o -c /home/wmd/project/EyeInhandMotionSW/src/utapi/base/servo_api_base.cpp",
+  "file": "/home/wmd/project/EyeInhandMotionSW/src/utapi/base/servo_api_base.cpp"
+},
+{
+  "directory": "/home/wmd/project/EyeInhandMotionSW/src/utapi/build",
+  "command": "/usr/bin/g++  -I/home/wmd/project/EyeInhandMotionSW/src/utapi/. -I/home/wmd/project/EyeInhandMotionSW/src/utapi -g -fPIC -o CMakeFiles/utapi.dir/adra/adra_api_base.cpp.o -c /home/wmd/project/EyeInhandMotionSW/src/utapi/adra/adra_api_base.cpp",
+  "file": "/home/wmd/project/EyeInhandMotionSW/src/utapi/adra/adra_api_base.cpp"
+},
+{
+  "directory": "/home/wmd/project/EyeInhandMotionSW/src/utapi/build",
+  "command": "/usr/bin/g++  -I/home/wmd/project/EyeInhandMotionSW/src/utapi/. -I/home/wmd/project/EyeInhandMotionSW/src/utapi -g -fPIC -o CMakeFiles/utapi.dir/base/arm_api_base.cpp.o -c /home/wmd/project/EyeInhandMotionSW/src/utapi/base/arm_api_base.cpp",
+  "file": "/home/wmd/project/EyeInhandMotionSW/src/utapi/base/arm_api_base.cpp"
+},
+{
+  "directory": "/home/wmd/project/EyeInhandMotionSW/src/utapi/build",
+  "command": "/usr/bin/g++  -I/home/wmd/project/EyeInhandMotionSW/src/utapi/. -I/home/wmd/project/EyeInhandMotionSW/src/utapi -g -fPIC -o CMakeFiles/utapi.dir/base/arm_report_status.cpp.o -c /home/wmd/project/EyeInhandMotionSW/src/utapi/base/arm_report_status.cpp",
+  "file": "/home/wmd/project/EyeInhandMotionSW/src/utapi/base/arm_report_status.cpp"
+},
+{
+  "directory": "/home/wmd/project/EyeInhandMotionSW/src/utapi/build",
+  "command": "/usr/bin/g++  -I/home/wmd/project/EyeInhandMotionSW/src/utapi/. -I/home/wmd/project/EyeInhandMotionSW/src/utapi -g -fPIC -o CMakeFiles/utapi.dir/base/arm_report_config.cpp.o -c /home/wmd/project/EyeInhandMotionSW/src/utapi/base/arm_report_config.cpp",
+  "file": "/home/wmd/project/EyeInhandMotionSW/src/utapi/base/arm_report_config.cpp"
+},
+{
+  "directory": "/home/wmd/project/EyeInhandMotionSW/src/utapi/build",
+  "command": "/usr/bin/g++  -I/home/wmd/project/EyeInhandMotionSW/src/utapi/. -I/home/wmd/project/EyeInhandMotionSW/src/utapi -g -fPIC -o CMakeFiles/utapi.dir/utra/utra_api_tcp.cpp.o -c /home/wmd/project/EyeInhandMotionSW/src/utapi/utra/utra_api_tcp.cpp",
+  "file": "/home/wmd/project/EyeInhandMotionSW/src/utapi/utra/utra_api_tcp.cpp"
+},
+{
+  "directory": "/home/wmd/project/EyeInhandMotionSW/src/utapi/build",
+  "command": "/usr/bin/g++  -I/home/wmd/project/EyeInhandMotionSW/src/utapi/. -I/home/wmd/project/EyeInhandMotionSW/src/utapi -g -fPIC -o CMakeFiles/utapi.dir/utra/utra_report_status.cpp.o -c /home/wmd/project/EyeInhandMotionSW/src/utapi/utra/utra_report_status.cpp",
+  "file": "/home/wmd/project/EyeInhandMotionSW/src/utapi/utra/utra_report_status.cpp"
+},
+{
+  "directory": "/home/wmd/project/EyeInhandMotionSW/src/utapi/build",
+  "command": "/usr/bin/g++  -I/home/wmd/project/EyeInhandMotionSW/src/utapi/. -I/home/wmd/project/EyeInhandMotionSW/src/utapi -g -fPIC -o CMakeFiles/utapi.dir/utra/utra_report_config.cpp.o -c /home/wmd/project/EyeInhandMotionSW/src/utapi/utra/utra_report_config.cpp",
+  "file": "/home/wmd/project/EyeInhandMotionSW/src/utapi/utra/utra_report_config.cpp"
+},
+{
+  "directory": "/home/wmd/project/EyeInhandMotionSW/src/utapi/build",
+  "command": "/usr/bin/g++  -I/home/wmd/project/EyeInhandMotionSW/src/utapi/. -I/home/wmd/project/EyeInhandMotionSW/src/utapi -g -fPIC -o CMakeFiles/utapi.dir/utra/utra_flxie_api.cpp.o -c /home/wmd/project/EyeInhandMotionSW/src/utapi/utra/utra_flxie_api.cpp",
+  "file": "/home/wmd/project/EyeInhandMotionSW/src/utapi/utra/utra_flxie_api.cpp"
+},
+{
+  "directory": "/home/wmd/project/EyeInhandMotionSW/src/utapi/build",
+  "command": "/usr/bin/g++  -I/home/wmd/project/EyeInhandMotionSW/src/utapi/. -I/home/wmd/project/EyeInhandMotionSW/src/utapi -g -fPIC -o CMakeFiles/utapi.dir/utra/utra_flxiv_api.cpp.o -c /home/wmd/project/EyeInhandMotionSW/src/utapi/utra/utra_flxiv_api.cpp",
+  "file": "/home/wmd/project/EyeInhandMotionSW/src/utapi/utra/utra_flxiv_api.cpp"
+}
+]

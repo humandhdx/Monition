@@ -1,0 +1,3 @@
+/home/wmd/project/EyeInhandMotionSW/src/utapi/build/CMakeFiles/utapi.dir
+/home/wmd/project/EyeInhandMotionSW/src/utapi/build/CMakeFiles/edit_cache.dir
+/home/wmd/project/EyeInhandMotionSW/src/utapi/build/CMakeFiles/rebuild_cache.dir
