@@ -59,9 +59,9 @@ public:
     QRadioButton *RbtnRightArm;
     QLabel *label_22;
     QLineEdit *EditArmStatus;
-    QPushButton *leftbtn5_2;
-    QPushButton *leftbtn5_3;
-    QComboBox *EndMoveMode;
+    QPushButton *huataibtn1;
+    QPushButton *huataibtn2;
+    QComboBox *comboBox;
     QSplitter *leftSplitter;
     QPushButton *leftbtn1;
     QPushButton *leftbtn2;
@@ -192,17 +192,15 @@ public:
         EditArmStatus->setObjectName(QString::fromUtf8("EditArmStatus"));
         EditArmStatus->setEnabled(true);
         EditArmStatus->setGeometry(QRect(420, 110, 141, 36));
-        leftbtn5_2 = new QPushButton(groupBox);
-        leftbtn5_2->setObjectName(QString::fromUtf8("leftbtn5_2"));
-        leftbtn5_2->setGeometry(QRect(540, 450, 81, 25));
-        leftbtn5_3 = new QPushButton(groupBox);
-        leftbtn5_3->setObjectName(QString::fromUtf8("leftbtn5_3"));
-        leftbtn5_3->setGeometry(QRect(540, 480, 81, 25));
-        EndMoveMode = new QComboBox(groupBox);
-        EndMoveMode->setObjectName(QString::fromUtf8("EndMoveMode"));
-        EndMoveMode->setGeometry(QRect(540, 420, 81, 25));
-        EndMoveMode->setMaxVisibleItems(12);
-        EndMoveMode->setModelColumn(12);
+        huataibtn1 = new QPushButton(groupBox);
+        huataibtn1->setObjectName(QString::fromUtf8("huataibtn1"));
+        huataibtn1->setGeometry(QRect(540, 450, 81, 25));
+        huataibtn2 = new QPushButton(groupBox);
+        huataibtn2->setObjectName(QString::fromUtf8("huataibtn2"));
+        huataibtn2->setGeometry(QRect(540, 480, 81, 25));
+        comboBox = new QComboBox(groupBox);
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        comboBox->setGeometry(QRect(505, 420, 115, 25));
         leftSplitter = new QSplitter(groupBox);
         leftSplitter->setObjectName(QString::fromUtf8("leftSplitter"));
         leftSplitter->setGeometry(QRect(10, 470, 524, 25));
@@ -289,9 +287,6 @@ public:
 
         retranslateUi(Widget);
 
-        EndMoveMode->setCurrentIndex(-1);
-
-
         QMetaObject::connectSlotsByName(Widget);
     } // setupUi
 
@@ -322,8 +317,8 @@ public:
         RbtnLeftArm->setText(QCoreApplication::translate("Widget", "\345\267\246\350\207\202", nullptr));
         RbtnRightArm->setText(QCoreApplication::translate("Widget", "\345\217\263\350\207\202", nullptr));
         label_22->setText(QCoreApplication::translate("Widget", "\350\277\236\346\216\245\347\212\266\346\200\201\357\274\232", nullptr));
-        leftbtn5_2->setText(QCoreApplication::translate("Widget", "\346\273\221\345\217\260\345\233\236\351\233\266", nullptr));
-        leftbtn5_3->setText(QCoreApplication::translate("Widget", "\346\273\221\345\217\260\350\277\220\345\212\250", nullptr));
+        huataibtn1->setText(QCoreApplication::translate("Widget", "\346\273\221\345\217\260\345\233\236\351\233\266", nullptr));
+        huataibtn2->setText(QCoreApplication::translate("Widget", "\346\273\221\345\217\260\350\277\220\345\212\250", nullptr));
         leftbtn1->setText(QCoreApplication::translate("Widget", "\345\267\246\350\264\237\350\275\275\346\265\213\350\257\225", nullptr));
         leftbtn2->setText(QCoreApplication::translate("Widget", "\345\267\246\347\262\276\345\272\246\346\265\213\350\257\225", nullptr));
         leftbtn3->setText(QCoreApplication::translate("Widget", "\345\267\246\345\267\245\344\275\234\347\251\272\351\227\264\346\265\213\350\257\225", nullptr));

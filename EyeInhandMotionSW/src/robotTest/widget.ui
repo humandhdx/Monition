@@ -420,7 +420,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="leftbtn5_2">
+   <widget class="QPushButton" name="huataibtn1">
     <property name="geometry">
      <rect>
       <x>540</x>
@@ -433,7 +433,7 @@
      <string>滑台回零</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="leftbtn5_3">
+   <widget class="QPushButton" name="huataibtn2">
     <property name="geometry">
      <rect>
       <x>540</x>
@@ -446,23 +446,14 @@
      <string>滑台运动</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="EndMoveMode">
+   <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>540</x>
+      <x>505</x>
       <y>420</y>
-      <width>81</width>
+      <width>115</width>
       <height>25</height>
      </rect>
-    </property>
-    <property name="currentIndex">
-     <number>-1</number>
-    </property>
-    <property name="maxVisibleItems">
-     <number>12</number>
-    </property>
-    <property name="modelColumn">
-     <number>12</number>
     </property>
    </widget>
    <widget class="QSplitter" name="leftSplitter">

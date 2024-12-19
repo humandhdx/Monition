@@ -41,7 +41,39 @@ Widget::Widget(QWidget *parent)
     ui->BtnSaveData->setDisabled(true);
     ui->BtnMoveToNextPos->setDisabled(true);
     ui->CkbRecordFTSensor->setEnabled(true);
+   //QStringList items;
+    // items << "回初始位" << "位置准确度1" << "位置准确度2"<<"位置准确度3"<<"位置准确度4"
+    //     << "位置重复性1" << "位置重复性2"<<"位置重复性3"<<"位置重复性4"<<"位置重复性5"
+    //       <<"位置重复性6"<< "位置重复性7"<<"位置重复性8"<<"位置重复性9"<<"位置重复性10";
+    MachineSettings returnsetting = {0, -15, 1000, 0, 0, 0};
+    ui->comboBox->addItem("回初始位",QVariant::fromValue(returnsetting));
+    MachineSettings psettings1 = {4, 5, 1500, 0, 0, 0};
+    MachineSettings psettings2 = {4, 10, 1500, 0, 0, 0};
+    MachineSettings psettings3 = {4, 15, 1500, 0, 0, 0};
+    MachineSettings psettings4 = {0, 20, 1000, 0, 0, 0};
+    // 将实例存储在数组中
+    MachineSettings psettingsArray[] = {psettings1, psettings2, psettings3, psettings4};
 
+    MachineSettings rsettings1 = {4, 0, 1500, 0, 0, 0};
+    MachineSettings rsettings2 = {4, 15, 1500, 0, 0, 0};
+    MachineSettings rsettings3 = {4, -15, 1500, 0, 0, 0};
+    MachineSettings rsettings4 = {4, 15, 1000, 0, 0, 0};
+    MachineSettings rsettings5 = {4, -15, 1500, 0, 0, 0};
+    MachineSettings rsettings6 = {4, 15, 1000, 0, 0, 0};
+    MachineSettings rsettings7 = {4, -15, 1500, 0, 0, 0};
+    MachineSettings rsettings8 = {4, 15, 1000, 0, 0, 0};
+    MachineSettings rsettings9 = {4, -15, 1500, 0, 0, 0};
+    MachineSettings rsettings10 = {4, 15, 1000, 0, 0, 0};
+    // 将实例存储在数组中
+    MachineSettings rsettingsArray[] = {rsettings1, rsettings2, rsettings3, rsettings4,
+    rsettings5, rsettings6, rsettings7, rsettings8,rsettings9, rsettings10};
+
+    for (int i = 0; i < 4; ++i) {
+        ui->comboBox->addItem("位置准确度"+QString::number(i+1),QVariant::fromValue(psettingsArray[i]));
+    }
+    for (int j = 0; j < 10; ++j) {
+        ui->comboBox->addItem("位置准确度"+QString::number(j+1),QVariant::fromValue(rsettingsArray[j]));
+    }
     rbt = new utraRobot();
     m_posCounter = 0;
     ui->EditRecordCounter->setText(QString::number(m_posCounter));
@@ -67,6 +99,11 @@ Widget::Widget(QWidget *parent)
     connect(ui->rightbtn4,&QPushButton::clicked,this,&Widget::right_arm_repeatabilitity_test);
     connect(ui->rightbtn5,&QPushButton::clicked,this,&Widget::set_right_tcp_offset);
 
+
+    //huatai btn
+
+    connect(ui->huataibtn1,&QPushButton::clicked,this,&Widget::set_huatai_return_zero);
+    connect(ui->huataibtn2,&QPushButton::clicked,this,&Widget::set_huatai_move);
 
 
     m_PosRecord.clear();
@@ -205,6 +242,71 @@ void Widget::set_right_tcp_offset()
     auto result= rbt->set_right_tcp_offset();
     if(result){
         qDebug("set_right_tcp_offset_sucess");
+    }
+}
+
+void Widget::set_huatai_return_zero()
+{
+    MachineSettings setting = {4, -15, 1500, 0, 0, 0}; // 初始化参数
+    callPunchCommandService(setting); // 调用服务
+}
+
+void Widget::set_huatai_move()
+{
+    auto index = ui->comboBox->currentIndex();
+    qDebug() << "index:" << index;
+
+    QVariant var = ui->comboBox->itemData(index);
+
+    // 检查是否可以转换
+    if (var.canConvert<MachineSettings>()) {
+        MachineSettings setting = var.value<MachineSettings>(); // 正确地获取 MachineSettings
+        qDebug() << "当前选中项:"
+                 << setting.work_mode
+                 << setting.slide_depth
+                 << setting.slide_velocity
+                 << setting.spin_velocity
+                 << setting.spin_revolution
+                 << setting.hold_millisecond;
+
+        // 调用服务函数
+        callPunchCommandService(setting);
+    } else {
+        qDebug() << "无法转换为 MachineSettings";
+    }
+
+
+
+}
+
+void Widget::callPunchCommandService(const MachineSettings &setting)
+{
+    auto pid = fork();
+    if (pid == -1) {
+        std::cout << "Failed to start script" << std::endl;
+        return; // 不需要返回 -1，因为返回类型是 void
+    } else if (pid == 0) { // 子进程
+        // 构建 JSON 字符串
+        std::string jsonParams = "{work_mode: " + std::to_string(setting.work_mode) +
+                                 ", slide_depth: " + std::to_string(setting.slide_depth) +
+                                 ", slide_velocity: " + std::to_string(setting.slide_velocity) +
+                                 ", spin_velocity: " + std::to_string(setting.spin_velocity) +
+                                 ", spin_revolution: " + std::to_string(setting.spin_revolution) +
+                                 ", hold_millisecond: " + std::to_string(setting.hold_millisecond) + "}";
+
+        // 使用 execl 调用 ROS 2 服务
+        execl("/opt/ros/humble/bin/ros2",
+              "ros2", "service", "call", "/punch_command",
+              "fue_interfaces/srv/PunchCommand",
+              jsonParams.c_str(), // 转换为 C 字符串
+              (char *)nullptr); // 最后一个参数必须是 nullptr
+
+        // 如果 execl 返回，表示出错
+        std::cerr << "Failed to execute ros2 command" << std::endl;
+        exit(1); // 退出子进程
+    } else { // 父进程
+        std::cout << "Child process id: " << pid << std::endl;
+        return; // 不需要返回 pid，因为返回类型是 void
     }
 }
 

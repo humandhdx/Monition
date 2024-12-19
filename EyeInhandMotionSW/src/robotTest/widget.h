@@ -8,7 +8,15 @@
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
 QT_END_NAMESPACE
-
+struct MachineSettings {
+    int work_mode;        // 工作模式
+    int slide_depth;      // 滑动深度
+    int slide_velocity;   // 滑动速度
+    int spin_velocity;     // 旋转速度
+    int spin_revolution;   // 旋转圈数
+    int hold_millisecond;  // 持续时间（毫秒）
+};
+Q_DECLARE_METATYPE(MachineSettings)
 class Widget : public QWidget
 {
     Q_OBJECT
@@ -33,6 +41,12 @@ private:
     void right_arm_repeatabilitity_test(); //右臂重复性测试
     void set_left_tcp_offset();  //左臂设置tcp
     void set_right_tcp_offset(); //右臂设置tcp
+
+    void set_huatai_return_zero();  //设置滑台回零
+    void set_huatai_move(); //设置滑台移动
+
+    void callPunchCommandService(const MachineSettings& setting);
+
 
     void initArm();
     bool SetAdjustStatus();
