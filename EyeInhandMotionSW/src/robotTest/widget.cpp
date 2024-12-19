@@ -52,6 +52,23 @@ Widget::Widget(QWidget *parent)
     connect(ui->BtnIputData,&QPushButton::clicked,this,&Widget::inputdata);
     connect(ui->BtnMoveToNextPos,&QPushButton::clicked,this,&Widget::movetoNextPos);
     connect(ui->CkbRecordFTSensor,&QCheckBox::stateChanged,this,&Widget::setStateRecordFTSensorDataOrNot);
+
+    //left btn
+    connect(ui->leftbtn1,&QPushButton::clicked,this,&Widget::left_arm_gravity_test);
+    connect(ui->leftbtn2,&QPushButton::clicked,this,&Widget::left_arm_accuracy_test);
+    connect(ui->leftbtn3,&QPushButton::clicked,this,&Widget::left_arm_workspace_test);
+    connect(ui->leftbtn4,&QPushButton::clicked,this,&Widget::left_arm_repeatabilitity_test);
+    connect(ui->leftbtn5,&QPushButton::clicked,this,&Widget::set_left_tcp_offset);
+
+    //right btn
+    connect(ui->rightbtn1,&QPushButton::clicked,this,&Widget::right_arm_gravity_test);
+    connect(ui->rightbtn2,&QPushButton::clicked,this,&Widget::right_arm_accuracy_test);
+    connect(ui->rightbtn3,&QPushButton::clicked,this,&Widget::right_arm_workspace_test);
+    connect(ui->rightbtn4,&QPushButton::clicked,this,&Widget::right_arm_repeatabilitity_test);
+    connect(ui->rightbtn5,&QPushButton::clicked,this,&Widget::set_right_tcp_offset);
+
+
+
     m_PosRecord.clear();
     m_PosRecord2.clear();
     m_PosData.clear();
@@ -99,6 +116,96 @@ Widget::~Widget()
 //    {
 //        delete m_PtrFTSensorDevice;
 //    }
+}
+
+void Widget::left_arm_gravity_test()
+{
+    qDebug("左臂负载测试");
+    auto result= rbt->left_arm_gravity_test();
+    if(result){
+        qDebug("left_arm_gravity_test_sucess");
+    }
+}
+
+void Widget::right_arm_gravity_test()
+{
+    qDebug("右臂负载测试");
+    auto result= rbt->right_arm_gravity_test();
+    if(result){
+        qDebug("right_arm_gravity_test_sucess");
+    }
+}
+
+void Widget::left_arm_accuracy_test()
+{
+    qDebug("左臂精度测试");
+    auto result= rbt->left_arm_accuracy_test();
+    if(result){
+        qDebug("left_arm_accuracy_test_sucess");
+    }
+}
+
+void Widget::left_arm_workspace_test()
+{
+    qDebug("左臂工作空间测试");
+    auto result= rbt->left_arm_workspace_test();
+    if(result){
+        qDebug("left_arm_workspace_test_sucess");
+    }
+}
+
+void Widget::left_arm_repeatabilitity_test()
+{
+    qDebug("左臂重复性测试");
+    auto result= rbt->left_arm_repeatabilitity_test();
+    if(result){
+        qDebug("left_arm_repeatabilitity_test_sucess");
+    }
+}
+
+void Widget::right_arm_accuracy_test()
+{
+    qDebug("右臂精度测试");
+    auto result= rbt->right_arm_accuracy_test();
+    if(result){
+        qDebug("right_arm_accuracy_test_sucess");
+    }
+}
+
+void Widget::right_arm_workspace_test()
+{
+    qDebug("右臂工作空间测试");
+    auto result= rbt->right_arm_workspace_test();
+    if(result){
+        qDebug("right_arm_workspace_test_sucess");
+    }
+}
+
+void Widget::right_arm_repeatabilitity_test()
+{
+     qDebug("右臂重复性测试");
+    auto result= rbt->right_arm_repeatabilitity_test();
+    if(result){
+        qDebug("right_arm_repeatabilitity_test_sucess");
+    }
+}
+
+void Widget::set_left_tcp_offset()
+{
+     qDebug("左臂设置tcp");
+    auto result= rbt->set_left_tcp_offset();
+    if(result){
+        qDebug("set_left_tcp_offset_sucess");
+    }
+}
+
+void Widget::set_right_tcp_offset()
+{
+    qDebug("右臂设置tcp");
+    auto result= rbt->set_right_tcp_offset();
+    if(result){
+        qDebug("set_right_tcp_offset_sucess");
+    }
 }
 
 void Widget::initArm()

@@ -23,6 +23,17 @@ private:
     Ui::Widget *ui;
     utraRobot *rbt;
 
+    void left_arm_gravity_test();  //左臂负载测试
+    void right_arm_gravity_test(); //右臂负载测试
+    void left_arm_accuracy_test(); //左臂精度测试
+    void left_arm_workspace_test(); //左臂工作空间测试
+    void left_arm_repeatabilitity_test(); //左臂重复性测试
+    void right_arm_accuracy_test();  //右臂精度测试
+    void right_arm_workspace_test(); //右臂工作空间测试
+    void right_arm_repeatabilitity_test(); //右臂重复性测试
+    void set_left_tcp_offset();  //左臂设置tcp
+    void set_right_tcp_offset(); //右臂设置tcp
+
     void initArm();
     bool SetAdjustStatus();
     bool setHoldStatusandRecord();
